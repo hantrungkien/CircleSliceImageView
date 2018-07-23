@@ -19,7 +19,7 @@ This library was developed and extended based on https://github.com/lopspower/Ci
 USAGE
 -----
 
-To make a circular and slice ImageView add CircleSliceImageView in your layout XML and add CircularImageView library in your project or you can also grab it via Gradle:
+To make a circular and slice ImageView add CircleSliceImageView in your layout XML and add CircleSliceImageView library in your project or you can also grab it via Gradle:
 
 ```
 allprojects {
