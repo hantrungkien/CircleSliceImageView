@@ -6,7 +6,6 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import java.security.SecureRandom
@@ -91,6 +90,8 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
     var sliceSections = 2
         set(value) {
             field = value
+            fullArcSliceLength = 360 / value
+            colorArcLineLength = fullArcSliceLength - 2 * (fullArcSliceLength / 10)
             invalidate()
         }
 
@@ -103,7 +104,7 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
             invalidate()
         }
 
-    var isSpaceSliceAndImage = true
+    var isSpaceSliceWithImage = true
         set(value) {
             field = value
             invalidate()
@@ -133,6 +134,8 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
         paintBackground!!.isAntiAlias = true
         paintBackground!!.style = Paint.Style.FILL_AND_STROKE
 
+        sliceSections = 2
+
         val attributes = context!!.obtainStyledAttributes(attrs, R.styleable.CircleSliceImageView)
 
         mode = attributes.getInteger(R.styleable.CircleSliceImageView_civ_mode, CircularImageMode.DEFAULT_MODE.getValue())
@@ -145,6 +148,7 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
                 sliceSections = attributes.getInteger(R.styleable.CircleSliceImageView_civ_slice_sections, 2)
                 sliceStartAngle = attributes.getInteger(R.styleable.CircleSliceImageView_civ_slice_start_angle, 0)
                 isSliceRandomColor = attributes.getBoolean(R.styleable.CircleSliceImageView_civ_slice_random_color, false)
+                isSpaceSliceWithImage = attributes.getBoolean(R.styleable.CircleSliceImageView_civ_slice_space_with_image, false)
                 sliceBorderWidth = attributes.getDimension(R.styleable.CircleSliceImageView_civ_slice_border_width, defSliceBorderSize)
                 setSliceBorderColor(attributes.getColor(R.styleable.CircleSliceImageView_civ_slice_border_color, Color.BLACK))
             }
@@ -161,9 +165,6 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
                 }
             }
         }
-
-        fullArcSliceLength = 360 / sliceSections
-        colorArcLineLength = fullArcSliceLength - 2 * (fullArcSliceLength / 10)
 
         setBackgroundColor(attributes.getColor(R.styleable.CircleSliceImageView_civ_background_color, Color.WHITE))
 
@@ -236,7 +237,7 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
                     canvas.drawArc(mSliceRect, (i * fullArcSliceLength + sliceStartAngle).toFloat(), colorArcLineLength.toFloat(), false, paintSliceBorder)
                 }
 
-                val radius: Float = if (isSpaceSliceAndImage) {
+                val radius: Float = if (isSpaceSliceWithImage) {
                     circleCenter.toFloat() - sliceBorderWidth - sliceBorderWidth / 2
                 } else {
                     circleCenter.toFloat() - sliceBorderWidth

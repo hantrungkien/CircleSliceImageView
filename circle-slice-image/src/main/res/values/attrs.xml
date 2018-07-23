@@ -10,12 +10,12 @@
         <attr name="civ_shadow_color" format="color" />
         <attr name="civ_shadow_radius" format="float" />
 
-        <attr name="civ_is_use_slice_border" format="boolean"/>
         <attr name="civ_slice_sections" format="integer"/>
         <attr name="civ_slice_start_angle" format="integer"/>
         <attr name="civ_slice_border_width" format="dimension"/>
         <attr name="civ_slice_border_color" format="color" />
         <attr name="civ_slice_random_color" format="boolean"/>
+        <attr name="civ_slice_space_with_image" format="boolean"/>
 
         <attr name="civ_shadow_gravity">
             <flag name="center" value="1" />

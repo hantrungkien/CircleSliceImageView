@@ -1,5 +1,6 @@
 package com.kienht.circlesliceimageview
 
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         button_slice.setOnClickListener {
             circleSliceImageView.mode = CircleSliceImageView.CircularImageMode.SLICE_MODE.getValue()
+            circleSliceImageView.sliceSections = 5
+            circleSliceImageView.sliceStartAngle = 90
         }
 
         button_border.setOnClickListener {
