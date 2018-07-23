@@ -14,7 +14,7 @@ This is an Android project allowing to realize a circular and slice ImageView in
 
 Slice ImageView like What's App avatar
 
-This library was developed and extended based on https://github.com/lopspower/CircularImageView and rewrite by Kotlin
+This library was developed and extended based on https://github.com/lopspower/CircularImageView and rewrited by Kotlin
 
 USAGE
 -----
