@@ -35,6 +35,8 @@ dependencies {
 
 ```
 
+<img src="slice.png" alt="slice" title="slice" width="300" height="435" align="center"/>
+
 XML
 -----
 
