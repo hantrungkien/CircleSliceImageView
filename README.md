@@ -1,18 +1,17 @@
 # CircleSliceImageView
 
-<p align="center"><img src="/banner.jpg"></p>
+<p align="center"><img src="banner.png"></p>
 
 =================
 
-<img src="/preview/preview.gif" alt="sample" title="sample" width="300" height="435" align="right" vspace="52" />
+<img src="preview.gif" alt="sample" title="sample" width="300" height="435" align="right" vspace="52" />
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 [![](https://jitpack.io/v/hantrungkien/CircleSliceImageView.svg)](https://jitpack.io/#hantrungkien/CircleSliceImageView)
 
-This library was developed and extended based on https://github.com/lopspower/CircularImageView
-
 This is an Android project allowing to realize a circular and slice ImageView in the simplest way possible.
+This library was developed and extended based on https://github.com/lopspower/CircularImageView
 
 USAGE
 -----
