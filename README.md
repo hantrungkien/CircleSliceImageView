@@ -30,7 +30,7 @@ allprojects {
 }
   
 dependencies {
-	implementation 'com.github.hantrungkien:CircleSliceImageView:v1.0.1'
+	implementation 'com.github.hantrungkien:CircleSliceImageView:v1.0.2'
 }
 
 ```
