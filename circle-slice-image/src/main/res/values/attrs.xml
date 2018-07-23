@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleSliceImageView">
+        <attr name="civ_mode" format="integer"/>
+
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_background_color" format="color" />
+        <attr name="civ_shadow" format="boolean" />
+        <attr name="civ_shadow_color" format="color" />
+        <attr name="civ_shadow_radius" format="float" />
+
+        <attr name="civ_is_use_slice_border" format="boolean"/>
+        <attr name="civ_slice_sections" format="integer"/>
+        <attr name="civ_slice_start_angle" format="integer"/>
+        <attr name="civ_slice_border_width" format="dimension"/>
+        <attr name="civ_slice_border_color" format="color" />
+        <attr name="civ_slice_random_color" format="boolean"/>
+
+        <attr name="civ_shadow_gravity">
+            <flag name="center" value="1" />
+            <flag name="top" value="2" />
+            <flag name="bottom" value="3" />
+            <flag name="start" value="4" />
+            <flag name="end" value="5" />
+        </attr>
+    </declare-styleable>
+</resources>
