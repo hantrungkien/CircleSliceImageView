@@ -21,17 +21,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button_default.setOnClickListener {
-            circleSliceImageView.mode = CircleSliceImageView.CircularImageMode.DEFAULT_MODE.getValue()
+            circleSliceImageView.mode = CircleSliceImageView.Mode.DEFAULT_MODE.getValue()
         }
 
         button_slice.setOnClickListener {
-            circleSliceImageView.mode = CircleSliceImageView.CircularImageMode.SLICE_MODE.getValue()
-            circleSliceImageView.sliceSections = 5
-            circleSliceImageView.sliceStartAngle = 90
+            circleSliceImageView.let {
+                it.mode = CircleSliceImageView.Mode.SLICE_MODE.getValue()
+                it.sliceSections = 10
+                it.sliceStartAngle = 90
+                it.isSliceRandomColor = true
+            }
         }
 
         button_border.setOnClickListener {
-            circleSliceImageView.mode = CircleSliceImageView.CircularImageMode.BORDER_MODE.getValue()
+            circleSliceImageView.mode = CircleSliceImageView.Mode.BORDER_MODE.getValue()
             circleSliceImageView.isShadowEnable = true
         }
 

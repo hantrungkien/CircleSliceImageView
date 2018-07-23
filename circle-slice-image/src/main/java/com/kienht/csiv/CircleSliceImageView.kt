@@ -9,6 +9,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
 import java.security.SecureRandom
+import java.util.*
 
 /**
  * @author kienht
@@ -104,7 +105,7 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
             invalidate()
         }
 
-    var isSpaceSliceWithImage = true
+    var isSliceSpaceWithImage = true
         set(value) {
             field = value
             invalidate()
@@ -148,7 +149,7 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
                 sliceSections = attributes.getInteger(R.styleable.CircleSliceImageView_civ_slice_sections, 2)
                 sliceStartAngle = attributes.getInteger(R.styleable.CircleSliceImageView_civ_slice_start_angle, 0)
                 isSliceRandomColor = attributes.getBoolean(R.styleable.CircleSliceImageView_civ_slice_random_color, false)
-                isSpaceSliceWithImage = attributes.getBoolean(R.styleable.CircleSliceImageView_civ_slice_space_with_image, false)
+                isSliceSpaceWithImage = attributes.getBoolean(R.styleable.CircleSliceImageView_civ_slice_space_with_image, false)
                 sliceBorderWidth = attributes.getDimension(R.styleable.CircleSliceImageView_civ_slice_border_width, defSliceBorderSize)
                 setSliceBorderColor(attributes.getColor(R.styleable.CircleSliceImageView_civ_slice_border_color, Color.BLACK))
             }
@@ -237,7 +238,7 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
                     canvas.drawArc(mSliceRect, (i * fullArcSliceLength + sliceStartAngle).toFloat(), colorArcLineLength.toFloat(), false, paintSliceBorder)
                 }
 
-                val radius: Float = if (isSpaceSliceWithImage) {
+                val radius: Float = if (isSliceSpaceWithImage) {
                     circleCenter.toFloat() - sliceBorderWidth - sliceBorderWidth / 2
                 } else {
                     circleCenter.toFloat() - sliceBorderWidth
@@ -439,8 +440,8 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
     }
 
     private fun getRandomColor(): Int {
-        val secureRandom = SecureRandom()
-        return Color.HSVToColor(150, floatArrayOf(secureRandom.nextInt(359).toFloat(), 1f, 1f))
+        val rnd = Random()
+        return Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256))
     }
 
     private fun shadowGravityFromValue(value: Int): ShadowGravity {

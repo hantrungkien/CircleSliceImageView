@@ -30,7 +30,7 @@ allprojects {
 }
   
 dependencies {
-	implementation 'com.github.hantrungkien:CircleSliceImageView:v1.0.2'
+	implementation 'com.github.hantrungkien:CircleSliceImageView:v1.0.3'
 }
 
 ```
@@ -83,7 +83,7 @@ circleSliceImageView.sliceBorderWidth = 10f
 circleSliceImageView.sliceStartAngle = 90
 circleSliceImageView.setBackgroundColor(Color.RED)
 circleSliceImageView.isSliceRandomColor = true
-circleSliceImageView.isSpaceSliceWithImage  = true
+circleSliceImageView.isSliceSpaceWithImage  = true
 
 //Set border
 circleSliceImageView.mode = CircleSliceImageView.Mode.BORDER_MODE.getValue()
@@ -113,8 +113,7 @@ circleSliceImageView.setSliceBorderWidth(10);
 circleSliceImageView.setSliceStartAngle(90);
 circleSliceImageView.setBackgroundColor(Color.RED);
 circleSliceImageView.setSliceRandomColor(true);
-circleSliceImageView.setSpaceSliceRandomColor(true);
-circleSliceImageView.setSpaceSliceWithImage(true);
+circleSliceImageView.setSliceSpaceWithImage(true);
 
 //Set border
 circleSliceImageView.setMode(CircleSliceImageView.Mode.BORDER_MODE)
