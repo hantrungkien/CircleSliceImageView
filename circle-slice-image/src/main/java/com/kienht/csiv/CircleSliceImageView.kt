@@ -138,13 +138,13 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
 
         val attributes = context!!.obtainStyledAttributes(attrs, R.styleable.CircleSliceImageView)
 
-        mode = attributes.getInteger(R.styleable.CircleSliceImageView_civ_mode, CircularImageMode.DEFAULT_MODE.getValue())
+        mode = attributes.getInteger(R.styleable.CircleSliceImageView_civ_mode, Mode.DEFAULT_MODE.getValue())
 
         when (mode) {
-            CircularImageMode.DEFAULT_MODE.getValue() -> {
+            Mode.DEFAULT_MODE.getValue() -> {
 
             }
-            CircularImageMode.SLICE_MODE.getValue() -> {
+            Mode.SLICE_MODE.getValue() -> {
                 sliceSections = attributes.getInteger(R.styleable.CircleSliceImageView_civ_slice_sections, 2)
                 sliceStartAngle = attributes.getInteger(R.styleable.CircleSliceImageView_civ_slice_start_angle, 0)
                 isSliceRandomColor = attributes.getBoolean(R.styleable.CircleSliceImageView_civ_slice_random_color, false)
@@ -152,7 +152,7 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
                 sliceBorderWidth = attributes.getDimension(R.styleable.CircleSliceImageView_civ_slice_border_width, defSliceBorderSize)
                 setSliceBorderColor(attributes.getColor(R.styleable.CircleSliceImageView_civ_slice_border_color, Color.BLACK))
             }
-            CircularImageMode.BORDER_MODE.getValue() -> {
+            Mode.BORDER_MODE.getValue() -> {
                 borderWidth = attributes.getDimension(R.styleable.CircleSliceImageView_civ_border_width, defaultBorderSize)
                 setBorderColor(attributes.getColor(R.styleable.CircleSliceImageView_civ_border_color, Color.BLACK))
 
@@ -222,13 +222,13 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
 
         var circleCenter = 0
         when (mode) {
-            CircularImageMode.DEFAULT_MODE.getValue() -> {
+            Mode.DEFAULT_MODE.getValue() -> {
                 circleCenter = canvasSize!! / 2
                 canvas.drawCircle(circleCenter.toFloat(), circleCenter.toFloat(), circleCenter.toFloat(), paintBackground)
 
                 canvas.drawCircle(circleCenter.toFloat(), circleCenter.toFloat(), circleCenter.toFloat(), paint)
             }
-            CircularImageMode.SLICE_MODE.getValue() -> {
+            Mode.SLICE_MODE.getValue() -> {
                 circleCenter = canvasSize!! / 2
                 for (i in 0 until sliceSections) {
                     if (isSliceRandomColor) {
@@ -247,7 +247,7 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
 
                 canvas.drawCircle(circleCenter.toFloat(), circleCenter.toFloat(), radius, paint)
             }
-            CircularImageMode.BORDER_MODE.getValue() -> {
+            Mode.BORDER_MODE.getValue() -> {
                 circleCenter = (canvasSize!! - borderWidth!! * 2).toInt() / 2
 
                 val margeWithShadowRadius = shadowRadius!! * 2
@@ -473,7 +473,7 @@ class CircleSliceImageView(context: Context?, attrs: AttributeSet?) : AppCompatI
         }
     }
 
-    enum class CircularImageMode {
+    enum class Mode {
         DEFAULT_MODE, SLICE_MODE, BORDER_MODE;
 
         fun getValue(): Int {

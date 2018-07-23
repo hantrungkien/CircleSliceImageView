@@ -73,10 +73,10 @@ KOTLIN
 
 ```java
 val circleSliceImageView = findViewById<CircleSliceImageView>(R.id.circleSliceImageView)
-circleSliceImageView.mode = CircleSliceImageView.CircularImageMode.DEFAULT_MODE.getValue()
+circleSliceImageView.mode = CircleSliceImageView.Mode.DEFAULT_MODE.getValue()
 
 //Set slice
-circleSliceImageView.mode = CircleSliceImageView.CircularImageMode.SLICE_MODE.getValue()
+circleSliceImageView.mode = CircleSliceImageView.Mode.SLICE_MODE.getValue()
 circleSliceImageView.sliceSections = 3
 circleSliceImageView.setSliceBorderColor(resources.getColor(R.color.GrayLight))
 circleSliceImageView.sliceBorderWidth = 10f
@@ -86,7 +86,7 @@ circleSliceImageView.isSliceRandomColor = true
 circleSliceImageView.isSpaceSliceWithImage  = true
 
 //Set border
-circleSliceImageView.mode = CircleSliceImageView.CircularImageMode.BORDER_MODE.getValue()
+circleSliceImageView.mode = CircleSliceImageView.Mode.BORDER_MODE.getValue()
 circleSliceImageView.setBorderColor(resources.getColor(R.color.GrayLight))
 circleSliceImageView.borderWidth = 10f
 circleSliceImageView.isShadowEnable = true
@@ -103,10 +103,10 @@ JAVA
 
 ```java
 CircleSliceImageView circleSliceImageView = (CircleSliceImageView)findViewById(R.id.yourCircularImageView);
-circleSliceImageView.setMode(CircleSliceImageView.CircularImageMode.DEFAULT_MODE)
+circleSliceImageView.setMode(CircleSliceImageView.Mode.DEFAULT_MODE)
 
 //Set slice
-circleSliceImageView.setMode(CircleSliceImageView.CircularImageMode.SLICE_MODE)
+circleSliceImageView.setMode(CircleSliceImageView.Mode.SLICE_MODE)
 circleSliceImageView.setSliceSections(3);
 circleSliceImageView.setSliceBorderColor(getResources().getColor(R.color.GrayLight));
 circleSliceImageView.setSliceBorderWidth(10);
@@ -117,7 +117,7 @@ circleSliceImageView.setSpaceSliceRandomColor(true);
 circleSliceImageView.setSpaceSliceWithImage(true);
 
 //Set border
-circleSliceImageView.setMode(CircleSliceImageView.CircularImageMode.BORDER_MODE)
+circleSliceImageView.setMode(CircleSliceImageView.Mode.BORDER_MODE)
 circleSliceImageView.setBorderColor(getResources().getColor(R.color.GrayLight));
 circleSliceImageView.setBorderWidth(10);
 circleSliceImageView.setShadowEnable(true)
@@ -125,7 +125,7 @@ circleSliceImageView.addShadow();
 circleSliceImageView.setShadowRadius(15);
 circleSliceImageView.setShadowColor(Color.RED);
 circleSliceImageView.setBackgroundColor(Color.RED);
-circleSliceImageView.setShadowGravity(CircularImageView.ShadowGravity.CENTER);
+circleSliceImageView.setShadowGravity(CircleSliceImageView.ShadowGravity.CENTER);
 
 ```
 
